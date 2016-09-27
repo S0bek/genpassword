@@ -5,6 +5,7 @@
 #
 #
 use strict;
+use Term::ANSIColor;
 
 #Fonctions principales
 sub genpass ($);
@@ -53,4 +54,7 @@ die "Il faut saisir un chiffre\n" unless ($len =~ /\d/);
 #Generation du mot de passe en fonction de la taille choisie + renforcement du mot de passe si ce dernier ne contient aucun caractere special
 my $pwd = genpass($len);
 $pwd = enforce ($pwd);
+
+print color 'bright_yellow';
 print "$pwd\n";
+print color 'reset';
